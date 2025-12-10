@@ -1,0 +1,163 @@
+/* Page layout */
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    transition: opacity 0.6s ease;
+    opacity: 1;
+    font-family: 'MedievalSharp', cursive; /* Pirate / map font */
+}
+
+.container {
+    background: transparent;
+}
+
+/* LEFT SIDE (GIF / map) */
+.left {
+    flex: 5;
+    background-image: url("gifs/bg.gif");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: contain; /* show full GIF without cropping */
+}
+
+/* RIGHT SIDE (buttons) */
+.right {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    background: rgb(209, 179, 140);
+    font-family: 'MedievalSharp', cursive; /* Pirate / map font for buttons */
+}
+
+/* BUTTON STYLING */
+.nav-button {
+    padding: 15px 30px;
+    font-size: 20px;
+    background-color: #1e90ff; /* Blue */
+    color: white;
+    border: 2px solid #0d5ec0;
+    cursor: pointer;
+    border-radius: 8px;
+    font-family: 'MedievalSharp', cursive; /* Font applied here */
+    transition: none; /* no hover effect */
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    font-family: 'MedievalSharp', cursive;
+
+    /* NEW — background image */
+    background-image: url("images/bglf1.png");  /* <-- change to your image */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed; /* makes background stay still */
+
+    color: #3b2f2f;
+    transition: opacity 0.6s ease;
+    opacity: 1;
+}
+
+
+/* CONTAINER STYLES */
+.container {
+    display: flex;
+    width: 100%;
+    min-height: 100vh;
+    gap: 20px;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.container-vertical {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+
+.horizontal-row {
+    display: flex;
+    gap: 20px;
+    width: 100%;
+}
+
+/* LEFT AND RIGHT CONTENT */
+.left-content, .right-content {
+    background-color: transparent;  /* remove tan */
+    border: none;                   /* remove border */
+    box-shadow: none;               /* remove shadow */
+}
+
+/* HEADINGS */
+h1 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    color: #6b4f3b; /* dark brown for titles */
+    text-align: center;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+}
+
+/* PARAGRAPH TEXT */
+.text-placeholder {
+    font-size: 1.2em;
+    line-height: 1.6;
+    margin-top: 20px;
+    text-align: justify;
+}
+
+/* IMAGE AND GIF PLACEHOLDER */
+.placeholder-img, .gif-placeholder {
+    width: 100%;
+    max-width: 525px;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 3px 3px 6px rgba(0,0,0,0.3);
+}
+
+/* GIF specific height */
+.gif-placeholder {
+    height: 250px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    margin-bottom: 20px;
+}
+
+/* BUTTON STYLING */
+.nav-button {
+    padding: 15px 30px;
+    font-size: 20px;
+    background-color: #1e90ff; /* blue buttons */
+    color: white;
+    border: 2px solid #0d5ec0;
+    cursor: pointer;
+    border-radius: 8px;
+    font-family: 'MedievalSharp', cursive;
+    margin-top: 15px;
+    transition: none;
+}
+
+/* --- FORCE REMOVE SHADOWS ON PAGES 1–6 ONLY --- */
+.subpage .placeholder-img,
+.subpage .gif-placeholder {
+    box-shadow: none !important;      /* remove shadow */
+    border: none !important;          /* remove border */
+    background: none !important;      /* remove invisible box */
+}
+
+/* Remove any wrapper shadow/background */
+.subpage .left-content,
+.subpage .right-content {
+    background: none !important;
+    box-shadow: none !important;
+    border: none !important;
+}
