@@ -1,41 +1,47 @@
-const buttons = document.querySelectorAll(".nav-button");
+document.addEventListener("DOMContentLoaded", () => {
 
-buttons.forEach(btn => {
-    btn.addEventListener("click", () => {
 
-        document.body.style.opacity = "0";
+    const buttons = document.querySelectorAll(".nav-button");
 
-        setTimeout(() => {
-            window.location.href = btn.getAttribute("data-link");
-        }, 600);
+    buttons.forEach(btn => {
+        btn.addEventListener("click", () => {
+            document.body.style.opacity = "0";
+            setTimeout(() => {
+                window.location.href = btn.getAttribute("data-link");
+            }, 600);
+        });
     });
-});
 
-const smallImg = document.querySelector(".top-right-img");
+/* OVERLAY STUFF*/
+const clickableImages = document.querySelectorAll(".top-right-img, .top-middle-img");
 const overlay = document.getElementById("img-overlay");
+const overlayImg = document.getElementById("overlay-img");
 
-smallImg.addEventListener("click", () => {
-    overlay.style.display = "flex";
+clickableImages.forEach(img => {
+    img.addEventListener("click", () => {
+        const fullImage = img.getAttribute("data-full") || img.src;
+        overlayImg.src = fullImage;
+        overlay.style.display = "flex";
+    });
 });
 
 overlay.addEventListener("click", () => {
     overlay.style.display = "none";
 });
 
-document.addEventListener("DOMContentLoaded", () => {
     const sound = document.getElementById("pageSound");
 
     if (sound) {
         sound.volume = 0.8;
         sound.play().catch(() => {
-            console.log("Autoplay blocked by browser. Will play on first click.");
+            console.log("Autoplay blocked by browser.");
         });
     }
-});
-document.addEventListener("click", () => {
-    const sound = document.getElementById("pageSound");
-    if (sound && sound.paused) {
-        sound.play();
-    }
-}, { once: true });
 
+    document.addEventListener("click", () => {
+        if (sound && sound.paused) {
+            sound.play();
+        }
+    }, { once: true });
+
+});

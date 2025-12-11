@@ -162,6 +162,18 @@ h1 {
     cursor: pointer;
 }
 
+.subpage .top-middle-img {
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 450px;
+    height: auto;
+    z-index: 2000;
+    cursor: pointer;
+}
+
+
 #img-overlay {
     position: fixed;
     top: 0;
@@ -178,10 +190,12 @@ h1 {
 #img-overlay img {
     max-width: 90%;
     max-height: 90%;
-    border-radius: 10px;
-    box-shadow: 0 0 20px black;
+    border-radius: 0;
+    box-shadow: none;
+    border: none;
     cursor: pointer;
 }
+
 
 .subpage .center-middle-img {
     position: fixed;
