@@ -11,13 +11,6 @@ buttons.forEach(btn => {
     });
 });
 
-document.querySelectorAll(".nav-button").forEach(btn => {
-    btn.addEventListener("click", () => {
-        window.location.href = btn.getAttribute("data-link");
-    });
-});
-
-
 const smallImg = document.querySelector(".top-right-img");
 const overlay = document.getElementById("img-overlay");
 
@@ -28,3 +21,21 @@ smallImg.addEventListener("click", () => {
 overlay.addEventListener("click", () => {
     overlay.style.display = "none";
 });
+
+document.addEventListener("DOMContentLoaded", () => {
+    const sound = document.getElementById("pageSound");
+
+    if (sound) {
+        sound.volume = 0.8;
+        sound.play().catch(() => {
+            console.log("Autoplay blocked by browser. Will play on first click.");
+        });
+    }
+});
+document.addEventListener("click", () => {
+    const sound = document.getElementById("pageSound");
+    if (sound && sound.paused) {
+        sound.play();
+    }
+}, { once: true });
+

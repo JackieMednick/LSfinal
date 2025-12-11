@@ -3,51 +3,6 @@ html, body {
     padding: 0;
     width: 100%;
     height: 100%;
-    transition: opacity 0.6s ease;
-    opacity: 1;
-    font-family: 'MedievalSharp', cursive;
-}
-
-.container {
-    background: transparent;
-}
-
-.left {
-    flex: 5;
-    background-image: url("gifs/bg.gif");
-    background-repeat: no-repeat;
-    background-position: center center;
-    background-size: contain;
-}
-
-.right {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 20px;
-    background: rgb(209, 179, 140);
-    font-family: 'MedievalSharp', cursive;
-}
-
-.nav-button {
-    padding: 15px 30px;
-    font-size: 20px;
-    background-color: #1e90ff;
-    color: white;
-    border: 2px solid #0d5ec0;
-    cursor: pointer;
-    border-radius: 8px;
-    font-family: 'MedievalSharp', cursive;
-    transition: none;
-}
-
-html, body {
-    margin: 0;
-    padding: 0;
-    width: 100%;
-    height: 100%;
     font-family: 'MedievalSharp', cursive;
 
     background-image: url("images/bglf1.png");
@@ -59,6 +14,41 @@ html, body {
     color: #3b2f2f;
     transition: opacity 0.6s ease;
     opacity: 1;
+}
+
+.container {
+    display: flex;
+    width: 100%;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+}
+
+/* MA BACKGROUND IMAGE */
+.left {
+    flex: 1;
+    position: relative;
+    background-image: url("gifs/bg.gif");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: contain;
+}
+
+.right {
+    display: none;
+}
+
+/* BUTTON STUFF */
+.nav-button {
+    position: absolute;
+    padding: 15px 30px;
+    font-size: 20px;
+    background-color: #1e90ff;
+    color: white;
+    border: 2px solid #0d5ec0;
+    border-radius: 8px;
+    cursor: pointer;
+    font-family: 'MedievalSharp', cursive;
 }
 
 .container {
@@ -235,14 +225,126 @@ h1 {
     pointer-events: none;  
 }
 
-.subpage .center-text-img {
-    position: fixed;
-    top: 10%;
-    left: 50%;
+
+.nav-button {
+    position: absolute;
+    padding: 15px 30px;
+    font-size: 20px;
+    background-color: #1e90ff;
+    color: white;
+    border: 2px solid #0d5ec0;
+    cursor: pointer;
+    border-radius: 8px;
+    font-family: 'MedievalSharp', cursive;
+}
+
+.mainpage .left {
+    position: relative;
+    background-position: center center;
+    background-size: contain;
+}
+
+.mainpage .nav-button {
+    position: absolute;
+}
+
+.mainpage .btn1 {
+    top: 76%;
+    left: 17%;
+}
+
+.mainpage .btn2 {
+    top: 45%;
+    left: 18%;
     transform: translateX(-50%);
-    max-width: 400px;
-    width: 40%;
-    z-index: 20;
-    pointer-events: none;
-  }
-  
+}
+
+.mainpage .btn3 {
+    top: 23%;
+    left: 20%;
+}
+
+.mainpage .btn4 {
+    bottom: 5%;
+    left: 68%;
+}
+
+.mainpage .btn5 {
+    bottom: 65%;
+    left: 77%;
+}
+
+.mainpage .btn6 {
+    bottom: 45%;
+    right: 43%;
+}
+
+@media (max-width: 768px) {
+    .mainpage .nav-button {
+        font-size: 18px;
+        padding: 12px 24px;
+    }
+    .mainpage .btn2 {
+        top: 7%;
+    }
+}
+
+/* ABOUT PAGE STUFF */
+.about-page {
+    background: none;
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.about-page img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    display: block;
+}
+
+.about-page .nav-button {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    padding: 12px 24px;
+    font-size: 18px;
+    background-color: #645529;
+    color: white;
+    border: 2px solid #5e3e1b;
+    border-radius: 8px;
+    cursor: pointer;
+    z-index: 1000;
+}
+
+.about-page .nav-button:hover {
+    background-color: #7a6239;
+}
+
+
+@media (max-width: 768px) {
+    .about-page img {
+        max-width: 90%;
+        max-height: 90%;
+    }
+
+    .about-page .nav-button {
+        padding: 10px 20px;
+        font-size: 16px;
+    }
+}
+.mainpage .nav-button {
+    position: absolute;
+    background: transparent !important;
+    border: none !important;
+    color: transparent !important;
+    pointer-events: auto;
+    cursor: pointer;
+}
+
